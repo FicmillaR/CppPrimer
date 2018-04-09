@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "资料\n\n\n书名：C++ Primer 第5版\n\n\n作者：Stanley B.Lippman, Barbara E.Moo, Josee Lajoie\n\n\n学习代码笔记：https://github.com/demon90s/CppPrimer\n\n\ncpp reference: http://zh.cppreference.com/w/cpp", 
+            "text": "资料\n\n\n书名：C++ Primer 第5版\n\n\n作者：Stanley B.Lippman, Barbara E.Moo, Josee Lajoie\n\n\ngithub code\n\n\ncpp reference", 
             "title": "Home"
         }, 
         {
             "location": "/#_1", 
-            "text": "书名：C++ Primer 第5版  作者：Stanley B.Lippman, Barbara E.Moo, Josee Lajoie  学习代码笔记：https://github.com/demon90s/CppPrimer  cpp reference: http://zh.cppreference.com/w/cpp", 
+            "text": "书名：C++ Primer 第5版  作者：Stanley B.Lippman, Barbara E.Moo, Josee Lajoie  github code  cpp reference", 
             "title": "资料"
         }, 
         {

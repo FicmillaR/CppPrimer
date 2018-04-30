@@ -1327,7 +1327,7 @@
         }, 
         {
             "location": "/cheatsheet/static的3个用途/", 
-            "text": "static的3个用途\n\n\n\n\n\n\n内部链接（C/C++）的全局函数/变量声明使用static修饰，表示该函数/变量只在所在的编译单元内可见。与之相关的是外部链接声明，使用extern修饰。\n\n\n\n\n\n\n静态局部变量（C/C++）在函数第一次运行时初始化，函数结束后变量不被销毁，下一次进入函数时仍保持状态。普通的局部变量称为自动变量。\n\n\n\n\n\n\n静态成员函数/变量（C++）表示函数/变量不绑定至实例。静态变量除了声明外还需要在类之外显式定义。\n\n\n\n\n\n\n代码案例\n\n\nstatic int a = 0;       // 1. 内部链接的变量\n\nstatic void f() {       // 1. 内部链接的函数\n} \n\nint g() {\n    static int b = 0;   // 2. 静态局部变量\n    b++;\n    return b;\n}\n\nclass Foo {\n    static void h();    // 3. 静态成员函数声明\n    static int c;       // 3. 静态成员变量声明\n\n    // 特殊：可以为静态成员提供const整数类型的类内初始值，且要求静态成员必须是字面值常量类型。\n    static const int d = 10;\n};\n\nvoid Foo::h() {         // 3. 静态成员函数定义\n}\n\nint Foo::c = 0;         // 3. 静态成员变量定义\n\n\n\n\n参考资料\n\n\n数组前加static是什么意思？ - \nMilo Yip的回答 - 知乎", 
+            "text": "static的3个用途\n\n\n\n\n\n\n内部链接（C/C++）的全局函数/变量声明使用static修饰，表示该函数/变量只在所在的编译单元内可见。与之相关的是外部链接声明，使用extern修饰。\n\n\n\n\n\n\n静态局部变量（C/C++）在函数第一次运行时初始化，函数结束后变量不被销毁，下一次进入函数时仍保持状态。普通的局部变量称为自动变量。\n\n\n\n\n\n\n静态成员函数/变量（C++）表示函数/变量不绑定至实例。静态变量除了声明外还需要在类之外显式定义。\n\n\n\n\n\n\n代码案例\n\n\nstatic int a = 0;       // 1. 内部链接的变量\n\nstatic void f() {       // 1. 内部链接的函数\n} \n\nint g() {\n    static int b = 0;   // 2. 静态局部变量\n    b++;\n    return b;\n}\n\nclass Foo {\n    static void h();    // 3. 静态成员函数声明\n    static int c;       // 3. 静态成员变量声明\n\n    // 特殊：可以为静态成员提供const整数类型的类内初始值，且要求静态成员必须是字面值常量类型。\n    static const int d = 10;\n};\n\nvoid Foo::h() {         // 3. 静态成员函数定义\n}\n\nint Foo::c = 0;         // 3. 静态成员变量定义\n\n\n\n\n参考资料\n\n\n数组前加static是什么意思？ - \nMilo Yip的回答 - 知乎\n\n\n测试代码", 
             "title": "static的3个用途"
         }, 
         {
@@ -1342,8 +1342,28 @@
         }, 
         {
             "location": "/cheatsheet/static的3个用途/#_2", 
-            "text": "数组前加static是什么意思？ -  Milo Yip的回答 - 知乎", 
+            "text": "数组前加static是什么意思？ -  Milo Yip的回答 - 知乎  测试代码", 
             "title": "参考资料"
+        }, 
+        {
+            "location": "/cheatsheet/若干种typedef/", 
+            "text": "若干种typedef\n\n\ntypedef long long   Int64;          // 简单的类型别名\ntypedef char        Name[32];       // 数组类型别名（char[32]）\ntypedef void        (*Func)(int);   // 函数指针类型\n\n\n\n\n函数指针在类中\n\n\nclass Funcs;\ntypedef void        (Funcs::*f)();  // Funcs类里面的函数指针类型\nclass Funcs {\npublic:\n    Funcs() {\n        funcs_map.insert({\nf1\n, \nFuncs::f1});\n    }\n\n    void Call(const std::string \nfunc)\n    {\n        auto it = funcs_map.find(func);\n        if (it != funcs_map.end())\n        {\n            auto func = it-\nsecond;\n            (this-\n*func)();\n        }\n    }\n\nprivate:\n    void f1() { cout \n \nf1\n \n endl; }\n    std::map\nstd::string, f\n funcs_map;\n};\n\n\n\n\n参考\n\n\n测试代码", 
+            "title": "若干种typedef"
+        }, 
+        {
+            "location": "/cheatsheet/若干种typedef/#typedef", 
+            "text": "typedef long long   Int64;          // 简单的类型别名\ntypedef char        Name[32];       // 数组类型别名（char[32]）\ntypedef void        (*Func)(int);   // 函数指针类型", 
+            "title": "若干种typedef"
+        }, 
+        {
+            "location": "/cheatsheet/若干种typedef/#_1", 
+            "text": "class Funcs;\ntypedef void        (Funcs::*f)();  // Funcs类里面的函数指针类型\nclass Funcs {\npublic:\n    Funcs() {\n        funcs_map.insert({ f1 ,  Funcs::f1});\n    }\n\n    void Call(const std::string  func)\n    {\n        auto it = funcs_map.find(func);\n        if (it != funcs_map.end())\n        {\n            auto func = it- second;\n            (this- *func)();\n        }\n    }\n\nprivate:\n    void f1() { cout    f1    endl; }\n    std::map std::string, f  funcs_map;\n};", 
+            "title": "函数指针在类中"
+        }, 
+        {
+            "location": "/cheatsheet/若干种typedef/#_2", 
+            "text": "测试代码", 
+            "title": "参考"
         }
     ]
 }
